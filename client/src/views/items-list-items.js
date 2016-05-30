@@ -34,7 +34,9 @@ export default class ItemsInList extends React.Component {
 		//console.log(this.props.isExpanded);
 
 		const listStyle = {
-			height: this.props.isExpanded ? 'auto' : 50
+			height: this.props.isExpanded ? 'auto' : 50,
+			transition: 'height 0.5s',
+			WebkitTransition: 'height 0.5s'
 		}
 
 	    return (
