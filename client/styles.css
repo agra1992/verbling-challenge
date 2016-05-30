@@ -3,7 +3,6 @@ body {
 	margin: auto;
 	width: 60%;
 	padding: 10px;
-
 }
 
 nav {
@@ -15,6 +14,8 @@ nav {
 
 #app-title {
 	text-align: center;
+	color: #666666;
+	font-size: 5.0em;
 }
 
 #searchForm, #createForm {
@@ -75,7 +76,7 @@ h5 {
 }
 
 button {
-	background: #2A80B9;
+	background: #5BC0DE;
 	border: none;
 	border-radius: 3px;
 	color: #FFF;
@@ -85,7 +86,7 @@ button {
 }
 
 button:hover {
-	background: #5BC0DE;
+	background: #5F99CF;
 	cursor: pointer;
 }
 
