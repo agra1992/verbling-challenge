@@ -2,7 +2,6 @@ import _ from 'lodash';
 import React from 'react';
 import ItemsListHeader from './items-list-header';
 import ItemsInList from './items-list-items';
-import { Row, ListGroup } from 'react-bootstrap';
 
 export default class AllItemsList extends React.Component {
 
