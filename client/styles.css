@@ -43,7 +43,7 @@ nav {
 	display: block;
 	list-style: none;
 	height: 50px;
-	border: 1px solid #4C4C4C;
+	border: 1px solid #5F99CF;
 	border-radius: 5px;
 	background: #2A80B9;
 	margin: 0 auto;
@@ -53,6 +53,7 @@ nav {
 
 #contentsContainer li:hover {
 	background: #5BC0DE;
+	border: 2px solid #5BC0DE;
 }
 
 h5 {
@@ -86,12 +87,13 @@ button {
 }
 
 button:hover {
-	background: #5F99CF;
+	background: #2A80B9;
 	cursor: pointer;
+	border: 2px solid #5BC0DE;
 }
 
 input {
 	border: 1px solid #2A80B9;
 	border-radius: 5px;
-	height: 30px;	
+	height: 30px;
 }
