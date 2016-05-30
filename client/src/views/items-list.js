@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import React from 'react';
-import ItemsListHeader from './items-list-header';
 import ItemsInList from './items-list-items';
 
 export default class AllItemsList extends React.Component {
