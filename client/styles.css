@@ -1,0 +1,96 @@
+body {
+	font-family:  "Times New Roman", Times, serif;
+	margin: auto;
+	width: 60%;
+	padding: 10px;
+
+}
+
+nav {
+	margin: auto;
+    width: 415px;
+    padding: 10px;
+
+}
+
+#app-title {
+	text-align: center;
+}
+
+#searchForm, #createForm {
+	margin: 0 auto;
+	width: 410px;
+}
+
+#contentsContainer {
+	color: #FFF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 400px;
+    width: 400px;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 5px;
+    border-radius: 3px;
+    border: 2px solid #2A80B9;
+    list-style-position:inside;
+    display: inline-block;
+}
+
+#contentsContainer li {
+	margin: 5px !important;
+	display: block;
+	list-style: none;
+	height: 50px;
+	border: 1px solid #4C4C4C;
+	border-radius: 5px;
+	background: #2A80B9;
+	margin: 0 auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#contentsContainer li:hover {
+	background: #5BC0DE;
+}
+
+h5 {
+	padding: 5px;
+}
+
+#createNewItem, #searchNewItem {
+	width: 100%;
+}
+
+#buttonsList {
+	margin: auto;
+    width: 420px;
+    padding: 10px;
+	list-style: none;
+}
+
+#buttonsList li {
+	float: left;
+	margin: 10px 0;
+}
+
+button {
+	background: #2A80B9;
+	border: none;
+	border-radius: 3px;
+	color: #FFF;
+	height: 30px;
+	width: 80px;
+	margin: 10px 20px 10px 0;
+}
+
+button:hover {
+	background: #5BC0DE;
+	cursor: pointer;
+}
+
+input {
+	border: 1px solid #2A80B9;
+	border-radius: 5px;
+	height: 30px;	
+}
