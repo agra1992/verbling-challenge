@@ -3,7 +3,6 @@ import React from 'react';
 export default class OpenAllListItems extends React.Component {
 
 	render() {
-		//console.log(this.props.itemsList);
 
 		return (
 			<form onSubmit={this.handleOpen.bind(this)}>
@@ -13,20 +12,8 @@ export default class OpenAllListItems extends React.Component {
     }
 
     handleOpen(event) {
-        event.preventDefault();
+        event.preventDefault();		//To prevent page refresh
         
-		console.log(this.props.openItems);
-
-		this.props.openItems(true);
-		/*_.forEach(this.props.itemsList, function(val) {
-			if(val.isExpanded === 'true') {
-				val.isExpanded = 'false';
-			}
-			else {
-				val.isExpanded = 'true';
-			}
-		});
-
-		this.props.toggleItems(this.props.itemsList);*/
+		this.props.openItems(true);		//Send true flag to parent function that Open All button has been clicked
     }
 }

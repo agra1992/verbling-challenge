@@ -3,8 +3,7 @@ import React from 'react';
 export default class CloseAllListItems extends React.Component {
 
 	render() {
-		//console.log(this.props.itemsList);
-
+		
 		return (
 			<form onSubmit={this.handleClose.bind(this)}>
                 <button>Close All</button>
@@ -13,20 +12,8 @@ export default class CloseAllListItems extends React.Component {
     }
 
     handleClose(event) {
-        event.preventDefault();
-        
-		console.log(this.props.closeItems);
+        event.preventDefault();		//To prevent page refresh
 
-		this.props.closeItems(true);
-		/*_.forEach(this.props.itemsList, function(val) {
-			if(val.isExpanded === 'true') {
-				val.isExpanded = 'false';
-			}
-			else {
-				val.isExpanded = 'true';
-			}
-		});
-
-		this.props.toggleItems(this.props.itemsList);*/
+		this.props.closeItems(true);	//Send close all true flag to parent function
     }
 }

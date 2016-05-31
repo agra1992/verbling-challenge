@@ -2,12 +2,7 @@ import React from 'react';
 
 export default class SearchAllItems extends React.Component {
 
-  /*handleInputChange(e) {
-    this.setState({input: e.target.value});
-  }*/
-
   render() {
-  //console.log(this.props.itemsList);
 
   return (
       <form id="searchForm" onChange={this.handleSearch.bind(this)}>
@@ -17,7 +12,7 @@ export default class SearchAllItems extends React.Component {
   }
 
   handleSearch(event) {
-    event.preventDefault();
-    this.props.searchItems(this.refs.searchInput.value, this.props.itemsListBackup);
+    event.preventDefault();   //To prevent page refresh
+    this.props.searchItems(this.refs.searchInput.value, this.props.itemsListBackup);    //Send the inputted search string and all items in list to parent function
   }
 }

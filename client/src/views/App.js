@@ -6,7 +6,9 @@ import CloseAllListItems from './close-list-items';
 import ToggleAllListItems from './toggle-list-items';
 import SearchAllItems from './search-items';
 
-var itemsListBackup = [];
+//Default values to load on page refresh
+//content attribute stores the actual content
+//isExpanded attribute stores whether the list item is expanded or collapsed
 
 const itemsList = [
 {
@@ -27,6 +29,9 @@ const itemsList = [
 }
 ];
 
+//To store values of itemsList without state
+var itemsListBackup = [];
+
 export default class App extends React.Component {
 
 	constructor(props) {
@@ -40,7 +45,7 @@ export default class App extends React.Component {
 
 	render() {
 
-		return (
+		return (	//Render all components
 			<div>
 				<h1 id="app-title">Verbling Challenge</h1>
 				<SearchAllItems searchItems = {this.searchItems.bind(this)} itemsListBackup={this.state.itemsListBackup}/>
@@ -58,67 +63,65 @@ export default class App extends React.Component {
 		);
 	}
 
-	createItem(content) {
-		this.state.itemsList.unshift({
+	createItem(content) {	//Function to create new item
+		this.state.itemsList.unshift({	//To add new item at the top of an array
 			content,
-			isExpanded: false
+			isExpanded: false	//Initially the list will be deflated
 		});
-		this.setState({ itemsList: this.state.itemsList });
-		itemsListBackup = itemsList;
-		console.log(itemsListBackup);
+		this.setState({ itemsList: this.state.itemsList });	//Update itemsList with the new item
+		itemsListBackup = itemsList;	//Create a backup list with all new and default values
 	}
 
-	toggleContent(content) {
-		const foundItem = _.find(this.state.itemsList, item => item.content === content);
-		foundItem.isExpanded = ! foundItem.isExpanded;
-		this.setState({ itemsList: this.state.itemsList });
+	toggleContent(content) {	//Function to inflate or deflate a particular list item
+		const foundItem = _.find(this.state.itemsList, item => item.content === content);	//Get the content of the item being clicked and match it with all the contents to find the correct list item 
+		foundItem.isExpanded = ! foundItem.isExpanded;	//Toggle isExpanded property accordingly
+		this.setState({ itemsList: this.state.itemsList });	//Update the itemsList
 	}
 
-	toggleItems(content) {
-		//console.log(this.state.itemsList);
+	toggleItems(content) {	//Function to inflate or deflate all list items
+
 		if(content) {
-			_.each(this.state.itemsList, function(item) {
+			_.each(this.state.itemsList, function(item) {	//Retrieve all items and toggle isExpanded value for each item
 				item.isExpanded = !item.isExpanded;
 			});
 		}
 		this.setState({ itemsList: this.state.itemsList });
 	}
 
-	openItems(content) {
-		//console.log(this.state.itemsList);
+	openItems(content) {	//Function to expand all list items
+
 		if(content) {
-			_.each(this.state.itemsList, function(item) {
+			_.each(this.state.itemsList, function(item) {	//Get all list items and set isExpanded to true for all
 				item.isExpanded = true;
 			});
 		}
 		this.setState({ itemsList: this.state.itemsList });
 	}
 
-	closeItems(content) {
-		//console.log(this.state.itemsList);
+	closeItems(content) {	//Function to close all list items
+
 		if(content) {
-			_.each(this.state.itemsList, function(item) {
+			_.each(this.state.itemsList, function(item) {	//Get all list items and set isExpanded to false for all
 				item.isExpanded = false;
 			});
 		}
 		this.setState({ itemsList: this.state.itemsList });
 	}
 
-	searchItems(content, backupVals) {
-		console.log(backupVals);
+	searchItems(content, backupVals) {	//Function to search for items. Parameters: content is the string to be searched and backupVals contains all the list items (without state updates)
 
 		var data = backupVals;
 		
-		if(content.length > 0){
+		if(content.length > 0){		//If content is entered by user
 			content = content.trim().toLowerCase();
-            // We are searching. Filter the results.
 
-            data = _.filter(data, function(l){
+            data = _.filter(data, function(l){		//Filter results based on search string
                 return l.content.toLowerCase().match( content );
             });
-            this.setState({ itemsList: data });
+
+            this.setState({ itemsList: data });		//Update the state of itemsList with the filtered array
         }
-        if(content.length === 0) {
+        if(content.length === 0) {	//If user deletes his search string or has not entered anything, display all items
         	this.setState({ itemsList: backupVals });
         }
 	}

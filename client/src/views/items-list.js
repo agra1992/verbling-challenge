@@ -6,13 +6,12 @@ export default class AllItemsList extends React.Component {
 
 	renderItems() {
 
-		const props = _.omit(this.props, 'itemsList');
+		const props = _.omit(this.props, 'itemsList');		//Don't need the itemsList prop so omitting it
 
 		return _.map(this.props.itemsList, (listItems, index) => <ItemsInList key={index} {...listItems} {...props} />);
 	}
 
 	render() {
-		//console.log(this.props.itemsList);
 
 		return (
 			<nav>

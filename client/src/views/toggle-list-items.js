@@ -3,8 +3,7 @@ import React from 'react';
 export default class ToggleAllListItems extends React.Component {
 
 	render() {
-		//console.log(this.props.itemsList);
-
+		
 		return (
 			<form onSubmit={this.handleToggle.bind(this)}>
                 <button>Toggle All</button>
@@ -13,20 +12,8 @@ export default class ToggleAllListItems extends React.Component {
     }
 
     handleToggle(event) {
-        event.preventDefault();
-        
-		console.log(this.props.toggleItems);
+        event.preventDefault();		//To prevent page refresh
 
-		this.props.toggleItems(true);
-		/*_.forEach(this.props.itemsList, function(val) {
-			if(val.isExpanded === 'true') {
-				val.isExpanded = 'false';
-			}
-			else {
-				val.isExpanded = 'true';
-			}
-		});
-
-		this.props.toggleItems(this.props.itemsList);*/
+		this.props.toggleItems(true);	//Send true toggle flag to parent function
     }
 }

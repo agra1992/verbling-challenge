@@ -2,12 +2,7 @@ import React from 'react';
 
 export default class CreateListItem extends React.Component {
 
-	/*handleInputChange(e) {
-		this.setState({input: e.target.value});
-	}*/
-
 	render() {
-		//console.log(this.props.itemsList);
 
 		return (
 			<form id='createForm' onSubmit={this.handleCreate.bind(this)}>
@@ -18,17 +13,15 @@ export default class CreateListItem extends React.Component {
     }
 
     handleCreate(event) {
-        event.preventDefault();
-        //console.log(this.refs.createInput.value);
-        //console.log(this.props.createItem);
+        event.preventDefault();     //To prevent page refresh
 
         if(this.refs.createInput.value != '') {
-        	this.props.createItem(this.refs.createInput.value);
+        	this.props.createItem(this.refs.createInput.value);    //Send entered contents to the parent function
         }
-        else {
+        else {      //Handle empty inserts
         	alert('Please input some value');
         }
 
-        this.refs.createInput.value = '';
+        this.refs.createInput.value = '';   //To empty the input field of all contents after add is clicked
     }
 }
