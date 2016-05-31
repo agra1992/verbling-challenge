@@ -39,9 +39,9 @@ export default class ItemsInList extends React.Component {
 		
 	    return (
 	    	
-	    	<div style={divStyle}>
-            	{ this.renderContentSection() }
-            </div>
+		<div style={divStyle}>
+			{ this.renderContentSection() }
+		</div>
 	    );
 	}
 
