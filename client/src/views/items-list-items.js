@@ -13,18 +13,19 @@ export default class ItemsInList extends React.Component {
 	renderContentSection() {
 		const { content, isExpanded } = this.props;		//Store content and isExpanded of each this.props.itemsList in const variables
 
-		const contentStyle = {
+		const listStyle = {
 			cursor: 'pointer',
-			width: 350,
+			width: '97%',
 			whiteSpace: isExpanded ? '' : 'nowrap',			//Nowrap for collapsed items for Ellipses to work
 			overflow: isExpanded ? '' : 'hidden',			//Display all text if item is expanded or hide overflow if an item is collapsed
-			textOverflow: isExpanded ? '' : 'ellipsis'		//Add ellipses style for all collapsed items
+			textOverflow: isExpanded ? '' : 'ellipsis',		//Add ellipses style for all collapsed items
+			height: isExpanded ? 'auto' : 50	//Default to 50px height if item is collapsed
 		}
 
 		return (
-			<h5 style={contentStyle} onClick = {this.props.toggleContent.bind(this, content)}>
+			<li style={listStyle} onClick = {this.props.toggleContent.bind(this, content)}>
 				{content}
-			</h5>
+			</li>
 		);
 	}
 
@@ -32,14 +33,15 @@ export default class ItemsInList extends React.Component {
 
 	render() {
 
-		const listStyle = {
-			height: this.props.isExpanded ? 'auto' : 50,	//Default to 50px height if item is collapsed
+		const divStyle = {
+			margin: '0px auto'
 		}
-
+		
 	    return (
-    		<li style={listStyle}>
-                {this.renderContentSection()}
-            </li>
+	    	
+	    	<div style={divStyle}>
+            	{ this.renderContentSection() }
+            </div>
 	    );
 	}
 
