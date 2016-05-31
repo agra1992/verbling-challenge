@@ -1,7 +1,7 @@
 # Verbling React Challenge
 
 ![](docs/spec.png)
-(docs/spec.png)
+![](docs/spec.png)
 
 ### Requirements
 
