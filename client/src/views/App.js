@@ -110,7 +110,7 @@ export default class App extends React.Component {
 
 	searchItems(content, backupVals) {	//Function to search for items. Parameters: content is the string to be searched and backupVals contains all the list items (without state updates)
 
-		var data = backupVals;
+		var data = backupVals;		//Set data with all the original values in the list
 		
 		if(content.length > 0){		//If content is entered by user
 			content = content.trim().toLowerCase();

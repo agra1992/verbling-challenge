@@ -97,3 +97,14 @@ input {
 	border-radius: 5px;
 	height: 30px;
 }
+
+#errorMessage {
+	margin: 0px auto 10px;
+	width: 60%;
+	font-size: 1.2em;
+	color: #A94442;
+	border: 1px solid #E3563C;
+	border-radius: 5px;
+	background: #F2DEDE;
+	text-align: center;
+}
